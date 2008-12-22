@@ -1,0 +1,69 @@
+%META:TOPICINFO{author="EugenMayer" date="1229338237" format="1.1" reprev="1.2" version="1.2"}%
+---+ !TopicListPlugin
+Gives you the possibility to generate a list of topics by macro or rest handler. Should be also optimized for a great number of topics
+
+%TOC%
+
+---++ Introduction
+Yet it is not able to use a rest function to recieve a list of all topics of a web, picking them up e.g. by the starting character "S" or similar.
+A use case is e.g. the TinyMCE editor, when you like to be able to pick the topics out of list when you try to link.
+
+The goal is, to make this plugin efficient even if you have a great number of topics. Mostly this can be done, by excluding topics by a starting character, to shorten/filter the result.
+
+---++ Usage 
+---+++ Macro !%GETTOPICLIST%
+
+| *Parameter* | *Default* | *Description* |
+| _web_  | Current web | which web should be used to get the topic-list. User *all* for getting all topics of all webs. %BR% you can also use a comma-separated list of webs |
+| _pattern_ | * ( all ) | regular expression for matching topic-names |
+| _casesensitive_ | 1 | be case sensitive |
+| _negate_ | 0 | negate the pattern. So all topics which do match the pattern, are *not* shown |
+| _max_ | 50 | maximum number of results. Use 0 for infinite |
+| _order_ | < | literal order, _<_ for increasing, _>_ for decreasing |
+| _format_ | "&nbsp;&nbsp;&nbsp;* ![[$WEB$.$TOPIC$][$TOPIC$]]" | format for each resulting row, $WEB$ gets replaced by the web, $TOPIC$ by the topic name |
+
+*Examples:* 
+   * List maximum 20 topics of this web starting with "S", decreasing order: !%GETTOPICLIST{pattern="^S.*$" max="20" order=">"}%
+   * List all topics of this Main web *not* starting with "S", increasing order: !%GETTOPICLIST{web="Main" pattern="^S.*$" negate="1" max="20"}%
+
+---++ Rest Methods
+---+++ topicList
+| *Parameter* | *Default* | *Description* |
+| _web_  | Current web | which web should be used to get the topic-list. User *all* for getting all topics of all webs. %BR% you can also use a comma-separated list of webs |
+| _pattern_ | * ( all ) | regular expression for matching topic-names |
+| _casesensitive_ | 1 | be case sensitive |
+| _negate_ | 0 | negate the pattern. So all topics which do match the pattern, are *not* shown |
+| _max_ | 50 | maximum number of results. Use 0 for infinite |
+| _order_ | < | literal order, _<_ for increasing, _>_ for decreasing |
+| _format_ | "$WEB$.$TOPIC$" | format for each resulting row, $WEB$ gets replaced by the web, $TOPIC$ by the topic name |
+
+---++ Installation instructions
+   * just use the installer attached to the topic or even easier, use the configure-system/Extension to easy install it trough an user-interface
+
+__Note:__ You do not need to install anything on the browser to use this plugin. The following instructions are for the administrator who installs the Plugin on the server where Foswiki is running.
+
+   * Set SHORTDESCRIPTION = Gives you the possibility to generate a list of topics by macro or rest handler. Should be also optimized for a great number of topics
+   
+|  Plugin Author: | Foswiki:Main.EugenMayer |
+|  Copyright: | &copy; Impressive.media |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Plugin Version: | 22 Dez 2008 (V0.1) |
+|  Change History: | <!-- versions below in reverse order --> |
+|  22 Dez 2008: | initial release |
+|  Foswiki Dependency: | |
+|  CPAN Dependencies: | DBI |
+|  Other Dependencies: | your backend, e.g. DBD::SQLite |
+|  Perl Version: | 5.005 |
+|  Add-on Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Feedback: | http://foswiki.org/Extensions/%TOPIC%Dev |
+|  Appraisal: | http://foswiki.org/Extensions/%TOPIC%Appraisal |
+ __Related Topic:__
+
+-- Foswiki:Main/EugenMayer - 22 Dez 2008
+
+%META:FORM{name="PackageForm"}%
+%META:FIELD{name="TopicClassification" attributes="" title="TopicClassification" value="PluginPackage"}%
+%META:FIELD{name="Compatibility" attributes="" title="[[Compatibility]]" value=""}%
+%META:FIELD{name="DemoUrl" attributes="" title="DemoUrl" value="http://"}%
+%META:FIELD{name="DevelopedInSVN" attributes="" title="DevelopedInSVN" value="Yes"}%
+%META:FIELD{name="ModificationPolicy" attributes="" title="ModificationPolicy" value="PleaseFeelFreeToModify"}%
