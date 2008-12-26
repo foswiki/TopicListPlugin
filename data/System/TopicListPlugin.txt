@@ -51,8 +51,8 @@ __Note:__ You do not need to install anything on the browser to use this plugin.
 |  26 Dez 2008: | implemented all methods. Yet no index or cache is implemented, so maybe not working to good on many topics |
 |  22 Dez 2008: | initial release |
 |  Foswiki Dependency: | |
-|  CPAN Dependencies: | DBI |
-|  Other Dependencies: | your backend, e.g. DBD::SQLite |
+|  CPAN Dependencies: | |
+|  Other Dependencies: | |
 |  Perl Version: | 5.005 |
 |  Add-on Home: | http://foswiki.org/Extensions/%TOPIC% |
 |  Feedback: | http://foswiki.org/Extensions/%TOPIC%Dev |
