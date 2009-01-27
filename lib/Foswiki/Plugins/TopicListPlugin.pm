@@ -36,7 +36,7 @@ $VERSION = '$Rev: 12445$';
 # This is a free-form string you can use to "name" your own plugin version.
 # It is *not* used by the build automation tools, but is reported as part
 # of the version number in PLUGINDESCRIPTIONS.
-$RELEASE = '0.3';
+$RELEASE = '0.4';
 
 # Short description of this plugin
 # One line description, is shown in the %FoswikiWEB%.TextFormattingRules topic:
@@ -76,7 +76,7 @@ sub _macrotopicList{
     
     my $globalFormat = _expandString($params->{"globalformat"}) || '%TOPICS';
     
-    return _getTopicList($searchWebs,$pattern,$casesensitive,$negate,$max,$order,$format,,$delimiter,$globalFormat);
+    return _getTopicList($searchWebs,$pattern,$casesensitive,$negate,$max,$order,$format,$delimiter,$globalFormat);
 }
 sub _topicList{
     my $session = shift;    
