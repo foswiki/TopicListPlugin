@@ -36,7 +36,7 @@ $VERSION = '$Rev: 12445$';
 # This is a free-form string you can use to "name" your own plugin version.
 # It is *not* used by the build automation tools, but is reported as part
 # of the version number in PLUGINDESCRIPTIONS.
-$RELEASE = '0.4';
+$RELEASE = '0.4.1';
 
 # Short description of this plugin
 # One line description, is shown in the %FoswikiWEB%.TextFormattingRules topic:
@@ -245,4 +245,3 @@ sub _expandString {
     $string =~ s/%NL/\n/g;        
 	return $string;
 }
-# vim: ft=perl foldmethod=marker
