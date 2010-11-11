@@ -52,7 +52,7 @@ __Note:__ You do not need to install anything on the browser to use this plugin.
 |  Release: | %$RELEASE% |
 |  Version: | %$VERSION% |
 |     History: | <!-- specify latest version first -->&nbsp; |
-|  11 Nov 2010 | Padraig Lennon: Foswikitask:Item9994 - Fix Release Version |
+|  11 Nov 2010 | Padraig Lennon: Foswikitask:Item9995 - Fix Release Version |
 |  27 Jan 2009: | fixed a bug in the macro |
 |  28 Dez 2008: | fixed minor bugs, added delimiter / globalformat, cosmetic things, new defaults |
 |  26 Dez 2008: | implemented all methods. Yet no index or cache is implemented, so maybe not working to good on many topics |
